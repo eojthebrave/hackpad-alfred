@@ -6,6 +6,8 @@ Huh? What!?
 
 [Alfred](http://www.alfredapp.com/) is a Mac OS X productivity application that makes all kinds of things just a keystroke away and it's also awesome!
 
+![Screenshot](https://api.monosnap.com/image/download?id=F1lVnf0YpiFAqK2wUCSnd02vo)
+
 ## Usage
 
 Invoke Alfred and type `hp` followed by whatever text you want to search for in HackPad. Alfred will start to list the relevant pads, select one and hit <key>enter</key> and it'll open that pad in your browser.
