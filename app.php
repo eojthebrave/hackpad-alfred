@@ -36,7 +36,7 @@ foreach (json_decode($res) as $r) {
     'uid' => 'suggest ' . $query,
     'arg' => $pad->base_url . '/' . $r->id,
     'title' => $r->title,
-    'subtitle' => $r->snippet,
+    'subtitle' => strip_tags($r->snippet),
     'icon' => 'icon.png',
   );
   array_push($output, $item);
