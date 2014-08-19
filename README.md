@@ -22,4 +22,6 @@ This workflow needs to know your HackPad API ID and Secret Key in order to make 
 
 Trigger Alfred and enter the text `hpsettings` to trigger the configuration commands. Then type one of `id`, `key` or `url` followed by a space and the value you would like to set for that option.
 
+*Note:* If you use a custom hackpad URL like lullabot.hackpad.com, you will also need to enter the `url` into the settings in order for this workflow to work.
+
 The complete command might look something like `hpsettings id MYAPIID`, then hit enter. If it works, you should see a message displayed on the screen.
