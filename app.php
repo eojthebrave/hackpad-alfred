@@ -11,6 +11,15 @@ require_once './workflows.php';
 
 $worker = new Workflows();
 
+/**
+ * Helper function to convert HTML entities to actual UTF-8 characters.
+ */
+function _convert_to_utf8($input) {
+  return preg_replace_callback("/(&#[0-9]+;)/", function($m) {
+    return mb_convert_encoding($m[1], "UTF-8", "HTML-ENTITIES");
+  }, $input); 
+}
+
 // Get Settings.
 $client_id = $worker->get('client_id', 'settings.plist');
 $client_key = $worker->get('client_key', 'settings.plist');
@@ -35,8 +44,8 @@ foreach (json_decode($res) as $r) {
   $item = array(
     'uid' => 'suggest ' . $query,
     'arg' => $pad->base_url . '/' . $r->id,
-    'title' => $r->title,
-    'subtitle' => strip_tags($r->snippet),
+    'title' => _convert_to_utf8($r->title),
+    'subtitle' => _convert_to_utf8(strip_tags($r->snippet)),
     'icon' => 'icon.png',
   );
   array_push($output, $item);
